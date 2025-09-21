@@ -62,6 +62,8 @@ iverilog good_counter.v tb_good_counter.v
 ```bash
 gtkwave tb_good_counter.vcd
 ```
+<img width="1210" height="773" alt="Screenshot from 2025-09-21 17-41-07" src="https://github.com/user-attachments/assets/290b4798-b5b0-424d-89f3-e477f2cfa015" />
+
 4. Walking Through the Verilog Code
 
 Here’s the code for the 2-bit good_counter:
