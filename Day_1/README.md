@@ -8,7 +8,7 @@ Understanding the role of Verilog, learning how to simulate circuits using Icaru
 
 [Running Simulations with iverilog](#2.-Running-Simulations-with-iverilog)
 
-[Hands-On: 2:1 Multiplexer](#3.-Hands-On:-2-bit-Counter)
+[Hands-On: 2 bit Counter](#3.-Hands-On:-2-bit-Counter)
 
 [Walking Through the Verilog Code](#4.-Walking-Through-the-Verilog-Code)
 
