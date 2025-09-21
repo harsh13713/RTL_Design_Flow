@@ -3,18 +3,18 @@
 Understanding the role of Verilog, learning how to simulate circuits using Icarus Verilog (iverilog), analysing the design using gtkwave, and getting a first look at synthesis with Yosys. By the end of this session, you’ll know how to describe, simulate, and map a simple design into gates.
 
 ## Contents
+[Design, Simulator & Testbench Basics](#1-design-simulator--testbench-basics)  
 
-[Design, Simulator & Testbench Basics](#1.-Design,-Simulator-&-Testbench-Basics)
+[Running Simulations with iverilog](#2-running-simulations-with-iverilog)  
 
-[Running Simulations with iverilog](#2.-Running-Simulations-with-iverilog)
+[Hands-On: 2 bit Counter](#3-hands-on-2-bit-counter)  
 
-[Hands-On: 2 bit Counter](#3.-Hands-On:-2-bit-Counter)
+[Walking Through the Verilog Code](#4-walking-through-the-verilog-code)  
 
-[Walking Through the Verilog Code](#4.-Walking-Through-the-Verilog-Code)
+[Synthesis with Yosys & Cell Libraries](#5-introduction-to-yosys--gate-libraries)  
 
-[Synthesis with Yosys & Cell Libraries](#5.-Synthesis-with-Yosys-&-Cell-Libraries)
+[Lab: Mapping the Mux to Gates](#6-synthesis-lab-with-yosys)  
 
-[Lab: Mapping the Mux to Gates](#6.-Lab:-Mapping-the-Mux-to-Gates)
 
 ## Key Takeaways
 
