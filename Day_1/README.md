@@ -8,7 +8,7 @@ Understanding the role of Verilog, learning how to simulate circuits using Icaru
 
 [Running Simulations with iverilog](#2.-Running-Simulations-with-iverilog)
 
-[Hands-On: 2:1 Multiplexer](#3.-Hands-On:-2:1-Multiplexer)
+[Hands-On: 2:1 Multiplexer](#3.-Hands-On:-2-bit-Counter)
 
 [Walking Through the Verilog Code](#4.-Walking-Through-the-Verilog-Code)
 
@@ -42,7 +42,7 @@ The testbench is a wrapper around the design. It feeds test inputs, observes out
 
 - You can view this .vcd in GTKWave to inspect signals cycle by cycle.
 
-### 3. Hands-On: 2:1 Multiplexer
+### 3. Hands-On: 2 bit Counter
 
 Let’s begin with a simple 2 bit counter.
 
