@@ -10,66 +10,62 @@ Understanding the role of Verilog, learning how to simulate circuits using Icaru
 
 [Hands-On: 2:1 Multiplexer](#3.-Hands-On:-2:1-Multiplexer)
 
-[Walking Through the Verilog Code](#
+[Walking Through the Verilog Code](#4.-Walking-Through-the-Verilog-Code)
 
-Synthesis with Yosys & Cell Libraries
+[Synthesis with Yosys & Cell Libraries](#5.-Synthesis-with-Yosys-&-Cell-Libraries)
 
-Lab: Mapping the Mux to Gates
+[Lab: Mapping the Mux to Gates](#6.-Lab:-Mapping-the-Mux-to-Gates)
 
-Key Takeaways
+## Key Takeaways
 
-1. Design, Simulator & Testbench Basics
-🖥️ Simulator
+### 1. Design, Simulator & Testbench Basics
+**Simulator**
 
 A simulator is software that mimics how your circuit behaves when inputs are applied. It lets you verify functionality long before building the chip.
 
-🏗️ Design
+**Design**
 
 The design is your RTL description — Verilog code that represents the actual circuit behavior.
 
-🧪 Testbench
+**Testbench**
 
 The testbench is a wrapper around the design. It feeds test inputs, observes outputs, and ensures correctness.
+<img width="971" height="532" alt="Screenshot from 2025-09-21 18-45-05" src="https://github.com/user-attachments/assets/3fbda2b4-8b63-44a4-b714-ebd0df5dedff" />
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/93927b96-df80-4da5-b801-284fc2cc6757" width="70%"> </div>
-2. Running Simulations with iverilog
+### 2. Running Simulations with iverilog
 
-iverilog is a popular open-source simulator for Verilog.
-Here’s the basic flow:
+**iverilog** is a popular open-source simulator for Verilog.
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/3ca190fb-cfa4-4abb-b9e1-0151b3c4bdba" width="70%"> </div>
+- The design and its testbench are compiled together.
 
-The design and its testbench are compiled together.
+- The simulator runs and can produce a .vcd waveform file.
 
-The simulator runs and can produce a .vcd waveform file.
+- You can view this .vcd in GTKWave to inspect signals cycle by cycle.
 
-You can view this .vcd in GTKWave to inspect signals cycle by cycle.
+### 3. Hands-On: 2:1 Multiplexer
 
-3. Hands-On: 2:1 Multiplexer
+Let’s begin with a simple 2 bit counter.
 
-Let’s begin with a simple 2-to-1 multiplexer.
-
-🔹 Step 1: Get the Code
+- Step 1: Get the Code
 
 Clone the repo (or create your own working folder):
-
+```bash
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
-
- Step 2: Install Tools
-sudo apt install iverilog gtkwave
-
- Step 3: Compile & Run
-iverilog good_mux.v tb_good_mux.v
+```
+ - Step 2: Compile & Run
+```bash
+iverilog good_counter.v tb_good_counter.v
 ./a.out
-
- Step 4: View the Waveform
-gtkwave tb_good_mux.vcd
-
+```
+ - Step 3: View the Waveform
+```bash
+gtkwave tb_good_counter.vcd
+```
 4. Walking Through the Verilog Code
 
 Here’s the code for the 2-bit good_counter:
-
+```v
 module good_counter (input clk , input reset , output reg [1:0] cnt);
 wire comp;
 
@@ -85,20 +81,20 @@ begin
                 cnt <= cnt+1;
 end
 endmodule
+```
+- Inputs: clk (clock), reset (asynchronous reset).
 
-Inputs: clk (clock), reset (asynchronous reset).
+- Output: cnt → 2-bit register storing the counter value.
 
-Output: cnt → 2-bit register storing the counter value.
-
-Wire: comp → high when cnt == 2.
+- Wire: comp → high when cnt == 2.
 
 Logic Flow:
 
-On reset, counter clears to 00.
+-On reset, counter clears to 00.
 
-If cnt reaches 10 (2 in decimal), it wraps back to 00.
+- If cnt reaches 10 (2 in decimal), it wraps back to 00.
 
-Otherwise, it increments on each clock edge.
+- Otherwise, it increments on each clock edge.
 
 This makes the design a mod-3 counter that cycles: 00 → 01 → 10 → 00 → …
 
