@@ -101,3 +101,26 @@ Logic Flow:
 This makes the design a mod-3 counter that cycles: 00 → 01 → 10 → 00 → …
 
 ---
+## 5. Synthesis with Yosys & Cell Libraries
+
+### Yosys in a Nutshell
+
+**Yosys** is an open-source tool that converts Verilog into a gate-level netlist.  
+It performs:
+
+- **Synthesis:** RTL → logic network  
+- **Optimization:** Improves timing/area  
+- **Technology Mapping:** Matches logic to real standard cells  
+- **Verification:** Ensures correctness  
+
+---
+
+### Why Do Libraries Have Multiple Gate Versions?
+
+Standard-cell libraries contain several versions of the same logic gate, each optimized differently:
+
+- **Performance:** Faster vs. slower  
+- **Power:** Low-power vs. high-power  
+- **Area:** Small area vs. large area  
+- **Drive Strength:** Stronger or weaker drive capab
+---
